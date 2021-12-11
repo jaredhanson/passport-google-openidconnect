@@ -82,8 +82,8 @@ database.
 var GoogleStrategy = require('passport-google-oidc');
 
 passport.use(new GoogleStrategy({
-    clientID: process.env['CLIENT_ID'],
-    clientSecret: process.env['CLIENT_SECRET'],
+    clientID: process.env['GOOGLE_CLIENT_ID'],
+    clientSecret: process.env['GOOGLE_CLIENT_SECRET'],
     callbackURL: 'https://www.example.com/oauth2/redirect'
   },
   function verify(issuer, profile, cb) {
@@ -130,7 +130,26 @@ passport.use(new GoogleStrategy({
 
 #### Define Routes
 
+Two routes are needed in order to allow users to log in with their Google
+account.  The first route redirects the user to the Google, where they will
+authenticate:
 
+```js
+app.get('/login/google', passport.authenticate('google'));
+```
+
+The second route processes the authentication response and logs the user in,
+after Google redirects the user back to the app:
+
+```js
+app.get('/oauth2/redirect',
+  passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
+  function(req, res) {
+    res.redirect('/');
+  });
+```
+
+## Documentation
 
 Refer to [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2/)
 for more information on integrating your application with Google APIs using
