@@ -64,9 +64,10 @@ its OAuth 2.0 redirect endpoint.
 The strategy takes a `verify` function as an argument, which accepts `issuer`
 and `profile` as arguments.  `issuer` is set to `https://accounts.google.com`,
 indicating that the user used Google to log in.  `profile` contains the user's
-profile information stored in their Google account.  When authenticating a
-user, this strategy uses the OpenID Connect protocol to obtain this information
-via a sequence of redirects and API requests to Google.
+[profile information](https://www.passportjs.org/reference/normalized-profile/)
+stored in their Google account.  When authenticating a user, this strategy uses
+the OpenID Connect protocol to obtain this information via a sequence of
+redirects and API requests to Google.
 
 The `verify` function is responsible for determining the user to which the
 Google account belongs.  In cases where the account is logging in for the
