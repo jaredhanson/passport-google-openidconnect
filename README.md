@@ -156,6 +156,13 @@ Refer to [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/i
 for more information on integrating your application with Google APIs using
 OAuth 2.0 and OpenID Connect.
 
+## Examples
+
+* [todos-express-google](https://github.com/passport/todos-express-google)
+
+  Illustrates how to use the Google strategy within an [Express](https://expressjs.com/)
+  application.
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
