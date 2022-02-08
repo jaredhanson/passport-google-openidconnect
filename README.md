@@ -1,7 +1,7 @@
 # passport-google-oidc
 
 [Passport](https://www.passportjs.org/) strategy for authenticating with
-[Google](https://www.google.com/) using [OpenID Connect](https://github.com/jaredhanson/passport-openidconnect).
+[Google](https://www.google.com/) using [OpenID Connect](https://www.passportjs.org/packages/passport-openidconnect/).
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Google authentication can be easily and
