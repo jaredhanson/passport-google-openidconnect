@@ -1,7 +1,7 @@
 # passport-google-oidc
 
 [Passport](https://www.passportjs.org/) strategy for authenticating with
-[Google](https://www.google.com/) using OpenID Connect.
+[Google](https://www.google.com/) using [OpenID Connect](https://github.com/jaredhanson/passport-openidconnect).
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Google authentication can be easily and
@@ -49,8 +49,8 @@ support email, and developer contact information.
 7. Select **Web application** as **Application type**.
 
 8. Click **Add URI** under **Authorized Redirect URIs**.  Enter the URL of your
-application's OAuth 2.0 redirect endpoint.  If you are using the example app,
-enter `http://localhost:3000/oauth2/redirect`.
+application's OAuth 2.0 redirect endpoint.  If you are using the [example](https://github.com/passport/todos-express-google)
+app, enter `http://localhost:3000/oauth2/redirect/google`.
 
 9. Click **Create** to create the OAuth client.  The following screen will
 display your client ID and secret.  Proceed to [configure the strategy](#configure-strategy).
@@ -84,7 +84,7 @@ var GoogleStrategy = require('passport-google-oidc');
 passport.use(new GoogleStrategy({
     clientID: process.env['GOOGLE_CLIENT_ID'],
     clientSecret: process.env['GOOGLE_CLIENT_SECRET'],
-    callbackURL: 'https://www.example.com/oauth2/redirect'
+    callbackURL: 'https://www.example.com/oauth2/redirect/google'
   },
   function verify(issuer, profile, cb) {
     db.get('SELECT * FROM federated_credentials WHERE provider = ? AND subject = ?', [
@@ -108,7 +108,7 @@ passport.use(new GoogleStrategy({
           ], function(err) {
             if (err) { return cb(err); }
             var user = {
-              id: id.toString(),
+              id: id,
               name: profile.displayName
             };
             return cb(null, user);
@@ -142,7 +142,7 @@ The second route processes the authentication response and logs the user in,
 after Google redirects the user back to the app:
 
 ```js
-app.get('/oauth2/redirect',
+app.get('/oauth2/redirect/google',
   passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
   function(req, res) {
     res.redirect('/');
@@ -159,4 +159,4 @@ OAuth 2.0 and OpenID Connect.
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2021 Jared Hanson <[https://www.jaredhanson.me/](https://www.jaredhanson.me/)>
+Copyright (c) 2021-2022 Jared Hanson <[https://www.jaredhanson.me/](https://www.jaredhanson.me/)>
