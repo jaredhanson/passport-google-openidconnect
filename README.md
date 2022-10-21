@@ -4,8 +4,8 @@
 [Google](https://www.google.com/) using [OpenID Connect](https://www.passportjs.org/packages/passport-openidconnect/).
 
 This module lets you authenticate using Google in your Node.js applications.
-By plugging into Passport, Google authentication can be easily and
-unobtrusively integrated into any application or framework that supports
+By plugging into Passport, Sign In with Google can be easily and unobtrusively
+integrated into any application or framework that supports
 [Connect](https://github.com/senchalabs/connect#readme)-style middleware,
 including [Express](https://expressjs.com/).
 
