@@ -9,6 +9,13 @@ unobtrusively integrated into any application or framework that supports
 [Connect](https://github.com/senchalabs/connect#readme)-style middleware,
 including [Express](https://expressjs.com/).
 
+<div align="center">
+
+:seedling: [Tutorial](https://www.passportjs.org/tutorials/google/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oidc&utm_content=nav-tutorial) •
+:heart: [Sponsors](https://www.passportjs.org/sponsors/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oidc&utm_content=nav-sponsors)
+
+</div>
+
 ## Install
 
 ```sh
