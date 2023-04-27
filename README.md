@@ -34,37 +34,7 @@ The Google strategy authenticates users using their Google account.  Before your
 application can make use of Google's authentication system, you must first
 [register](https://support.google.com/cloud/answer/6158849) your app to use
 OAuth 2.0 with Google APIs.  Once registered, a client ID and secret will be
-issued which are used by Google to identify your app.  To register, complete the
-following steps:
-
-1. Go to the [Google Cloud Platform console](https://console.cloud.google.com/).
-
-2. From the projects list, select a project or create a new one.
-
-3. Navigate to the [APIs & Services](https://console.cloud.google.com/apis) page
-and select [Credentials](https://console.cloud.google.com/apis/credentials).
-
-4. If you have an existing application, it will be listed under **OAuth 2.0
-Client IDs**.  Click **Edit OAuth client** to obtain the client ID and secret,
-and proceed to [configure the strategy](#configure-strategy).  Otherwise,
-continue.
-
-5. If you have not already done so, [configure](https://support.google.com/cloud/answer/10311615)
-the [OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent).
-Select **External** to make your application available to any user with a Google
-account.  Complete the app registration process by entering the app name,
-support email, and developer contact information.
-
-6. Click **Create Credentials**, then select **OAuth client ID**.
-
-7. Select **Web application** as **Application type**.
-
-8. Click **Add URI** under **Authorized Redirect URIs**.  Enter the URL of your
-application's OAuth 2.0 redirect endpoint.  If you are using the [example](https://github.com/passport/todos-express-google)
-app, enter `http://localhost:3000/oauth2/redirect/google`.
-
-9. Click **Create** to create the OAuth client.  The following screen will
-display your client ID and secret.  Proceed to [configure the strategy](#configure-strategy).
+issued which are used by Google to identify your app.
 
 #### Configure Strategy
 
@@ -120,6 +90,7 @@ passport.use(new GoogleStrategy({
             profile.id
           ], function(err) {
             if (err) { return cb(err); }
+            
             var user = {
               id: id,
               name: profile.displayName
@@ -175,6 +146,12 @@ app.get('/oauth2/redirect/google',
   Illustrates how to use the Google strategy within an Express application.  For
   developers new to Passport and getting started, a [tutorial](https://www.passportjs.org/tutorials/google/)
   is available.
+
+## Related Packages
+
+* [passport-google-oauth20](https://www.passportjs.org/packages/passport-google-oauth20/)
+
+  Passport strategy for authenticating with Google using OAuth 2.0.
 
 ## Authors
 
