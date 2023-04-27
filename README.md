@@ -1,7 +1,7 @@
 # passport-google-oidc
 
 [Passport](https://www.passportjs.org/) strategy for authenticating with
-[Google](https://www.google.com/) using [OpenID Connect](https://www.passportjs.org/packages/passport-openidconnect/).
+[Google](https://www.google.com/) using [OpenID Connect](https://www.passportjs.org/features/openid-connect/).
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Sign In with Google can be easily and unobtrusively
@@ -14,6 +14,10 @@ including [Express](https://expressjs.com/).
 :seedling: [Tutorial](https://www.passportjs.org/tutorials/google/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oidc&utm_content=nav-tutorial) •
 :heart: [Sponsors](https://www.passportjs.org/sponsors/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oidc&utm_content=nav-sponsors)
 
+</div>
+
+<div align="right">
+  <sup>Developed by <a href="#authors">Jared Hanson</a>.</sub>
 </div>
 
 ## Install
@@ -172,8 +176,12 @@ app.get('/oauth2/redirect/google',
   developers new to Passport and getting started, a [tutorial](https://www.passportjs.org/tutorials/google/)
   is available.
 
+## Authors
+
+- [Jared Hanson](https://www.jaredhanson.me/) { [![WWW](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/globe-12x12.svg)](https://www.jaredhanson.me/) [![Facebook](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/facebook-12x12.svg)](https://www.facebook.com/jaredhanson) [![LinkedIn](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/linkedin-12x12.svg)](https://www.linkedin.com/in/jaredhanson) [![Twitter](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/twitter-12x12.svg)](https://twitter.com/jaredhanson) [![GitHub](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/github-12x12.svg)](https://github.com/jaredhanson) }
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2021-2022 Jared Hanson <[https://www.jaredhanson.me/](https://www.jaredhanson.me/)>
+Copyright (c) 2021-2023 Jared Hanson
